@@ -1,0 +1,311 @@
+/* ---------- Basico ---------- */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  color: #ffffff;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Fondo::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("img/Fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.1);
+  filter: brightness(8%);
+  z-index: -1;
+}
+
+.navbar {
+  height: 70px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav-item{
+  padding: 0px 8px;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
+/* ---------- Logotipo principal ---------- */
+
+.ImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ImgContainer img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.ImgContainer img:hover {
+  cursor: pointer;
+}
+
+/* ---------- Principal ---------- */
+
+.Text {
+  margin: 80px 250px;
+  font-size: 22px;
+}
+
+.PImg {
+  margin: 80px;
+  font-size: 60px;
+}
+
+.PImg h1 {
+  font-size: 55px;
+}
+
+.PImg h2 {
+  font-size: 40px;
+}
+
+#carouselExampleCaptions .carousel-item img{
+  height: 60vh;
+  object-fit: cover;
+}
+
+#ContText{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#ContText img{
+  width: 100%;
+  display: block;
+}
+
+.Overlay{
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.CenterOverImageT{
+  margin-top: 150px;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+.CenterOverImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.CenterOverImageT .Text{
+  width: 80%;
+  text-align: left;
+  font-size: 24px;
+}
+
+.PM-80 {
+  margin: 80px;
+}
+
+
+
+
+/* ---------- Estado inicial ---------- */
+
+.no-scroll{
+  overflow: hidden;
+}
+
+.Fondo::before{
+  transition: filter 0.5s ease;
+  filter: brightness(100%);
+}
+
+.Fondo.activo::before{
+  filter: brightness(8%);
+}
+
+.ImgContainer{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImgContainer img{
+  width: 450px;
+  max-width: 80%;
+  cursor: pointer;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ImgContainer.oculto img{
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+.Oculto{
+  display: none;
+}
+
+.Mostrar{
+  display: block;
+}
+
+
+
+/* ---------- Responsividad ---------- */
+
+
+@media (max-width: 992px) {
+
+  .Text {
+    margin: 60px 80px;
+    font-size: 20px;
+  }
+
+  .PImg {
+    margin: 50px;
+    font-size: 45px;
+  }
+
+  .PImg h1 {
+    font-size: 42px;
+  }
+
+  .PImg h2 {
+    font-size: 32px;
+  }
+
+  .CenterOverImageT {
+    margin-top: 100px;
+    font-size: 40px;
+  }
+
+  .CenterOverImageT .Text {
+    width: 90%;
+    font-size: 20px;
+  }
+
+  #carouselExampleCaptions .carousel-item img {
+    height: 50vh;
+  }
+
+  .PM-80 {
+    margin: 50px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .navbar {
+    min-height: auto;
+    padding: 10px 0;
+  }
+
+  .Text {
+    margin: 40px 20px;
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  .PImg {
+    margin: 30px 20px;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .PImg h1 {
+    font-size: 32px;
+  }
+
+  .PImg h2 {
+    font-size: 24px;
+  }
+
+  .CenterOverImageT {
+    margin-top: 60px;
+    font-size: 28px;
+  }
+
+  .CenterOverImageT .Text {
+    width: 95%;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  #carouselExampleCaptions .carousel-item img {
+    height: 35vh;
+  }
+
+  .ImgContainer img {
+    width: 280px;
+  }
+
+  .PM-80 {
+    margin: 25px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+
+  .Text {
+    font-size: 16px;
+    margin: 25px 15px;
+  }
+
+  .PImg h1 {
+    font-size: 26px;
+  }
+
+  .PImg h2 {
+    font-size: 20px;
+  }
+
+  .CenterOverImageT {
+    font-size: 22px;
+    margin-top: 40px;
+  }
+
+  .CenterOverImageT .Text {
+    font-size: 14px;
+  }
+
+  #carouselExampleCaptions .carousel-item img {
+    height: 28vh;
+  }
+
+  .ImgContainer img {
+    width: 220px;
+  }
+}
